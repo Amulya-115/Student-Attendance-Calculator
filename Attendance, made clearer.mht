@@ -1,0 +1,575 @@
+From: <Saved by Blink>
+Snapshot-Content-Location: https://attend-ease-dashboard--kallurinarayana.replit.app/attendance-calculator/
+Subject: Attendance, made clearer
+Date: Thu, 29 Oct 2026 16:43:03 GMT
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----MultipartBoundary--EYh3WtQcCPO4gRSE66mGxZyYG5lrnI6W3rxMh7RFES----"
+
+
+------MultipartBoundary--EYh3WtQcCPO4gRSE66mGxZyYG5lrnI6W3rxMh7RFES----
+Content-Type: text/html
+Content-ID: <frame-5947B8F7C44E971F99ECB68865B60E2E@mhtml.blink>
+Content-Transfer-Encoding: binary
+Content-Location: https://attend-ease-dashboard--kallurinarayana.replit.app/attendance-calculator/
+
+<!DOCTYPE html><html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f7fc">
+    <meta name="description" content="A friendly attendance companion to help you understand your numbers and plan your next classes.">
+    <title>Attendance, made clearer</title>
+    <link rel="icon" type="image/x-icon" href="https://attend-ease-dashboard--kallurinarayana.replit.app/attendance-calculator/favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="https://attend-ease-dashboard--kallurinarayana.replit.app/attendance-calculator/favicon.svg">
+    
+    <link rel="stylesheet" crossorigin="" href="https://attend-ease-dashboard--kallurinarayana.replit.app/attendance-calculator/assets/index-DsI8CjNu.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="https://attend-ease-dashboard--kallurinarayana.replit.app/attendance-calculator/" aria-label="Attendance, made clearer home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="m2.8 9.1 9.2-4.4 9.2 4.4-9.2 4.4-9.2-4.4Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path><path d="M6.5 11v4.3c3.6 2.8 7.4 2.8 11 0V11M21.2 9.2v5.1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="21.2" cy="16.2" r="1.2" fill="currentColor"></circle></svg>
+          </span>
+          <span class="brand-name">Classmate<span class="brand-sub">YOUR ATTENDANCE COMPANION</span></span>
+        </a>
+        <div class="date-chip" id="today-label" aria-label="Today's date"></div>
+      </header>
+
+      <section class="intro" aria-labelledby="welcome-heading">
+        <div>
+          <p class="eyebrow">A little clarity goes a long way</p>
+          <h1 id="welcome-heading">Your attendance,<br>at a glance.</h1>
+          <p class="intro-copy">Know where you stand. Make a plan that feels doable.</p>
+        </div>
+        <div class="student-field">
+          <label class="field-label" for="student-name">Your name <span>(optional)</span></label>
+          <input class="input" id="student-name" type="text" maxlength="60" placeholder="e.g. Maya">
+        </div>
+      </section>
+
+      <section class="dashboard-grid" aria-label="Attendance calculator">
+        <form class="panel calculator" id="calculator-form" novalidate="">
+          <div class="panel-heading">
+            <div>
+              <h2>Check a class</h2>
+              <p>Enter your counts and see what comes next.</p>
+            </div>
+            <span class="tiny-cap" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="m2.8 9.1 9.2-4.4 9.2 4.4-9.2 4.4-9.2-4.4Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path><path d="M6.5 11v4.3c3.6 2.8 7.4 2.8 11 0V11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path></svg></span>
+          </div>
+          <div class="form-grid">
+            <div class="field full">
+              <label class="field-label" for="class-name">Subject name <span>(optional)</span></label>
+              <input class="input" id="class-name" type="text" maxlength="80" placeholder="e.g. Introduction to Biology">
+            </div>
+            <div class="field">
+              <label class="field-label" for="total-classes">Classes conducted</label>
+              <input class="input" id="total-classes" type="number" min="0" step="1" inputmode="numeric" placeholder="0" required="">
+            </div>
+            <div class="field">
+              <label class="field-label" for="attended-classes">Classes attended</label>
+              <input class="input" id="attended-classes" type="number" min="0" step="1" inputmode="numeric" placeholder="0" required="">
+            </div>
+            <div class="field full">
+              <label class="field-label" for="required-rate">Required attendance</label>
+              <div class="suffix-wrap">
+                <input class="input" id="required-rate" type="number" min="0" max="100" step="any" inputmode="decimal" value="75" required="">
+                <span class="suffix">%</span>
+              </div>
+            </div>
+          </div>
+          <div class="button-row">
+            <button class="btn btn-primary" type="submit">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M11 3 4 13h6l-1 8 11-12h-7l1-6h-3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path></svg>
+              Calculate
+            </button>
+            <button class="btn btn-quiet" type="reset" id="reset-calculator">Reset</button>
+          </div>
+          <p class="form-message" id="calculator-message" aria-live="polite"></p>
+        </form>
+
+        <section class="panel results" id="result-panel" aria-labelledby="result-heading" aria-live="polite">
+          <div class="result-top">
+            <div>
+              <p class="eyebrow" id="result-subject">YOUR SNAPSHOT</p>
+              <h2 id="result-heading">Attendance snapshot</h2>
+            </div>
+            <span class="status-pill" id="status-pill">Not started</span>
+          </div>
+          <div class="rate-wrap">
+            <div class="rate-ring" id="rate-ring" role="img" aria-label="Attendance rate 0 percent"><span id="rate-value">—</span></div>
+            <div class="rate-copy">
+              <strong id="result-message">Ready when you are</strong>
+              <p id="result-summary">Add your class counts to see your current attendance and a practical next step.</p>
+            </div>
+          </div>
+          <div class="main-progress">
+            <div class="progress-label"><span>Attendance progress</span><span id="progress-value">0%</span></div>
+            <div class="progress-track" id="attendance-progress" role="progressbar" aria-label="Attendance percentage" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-valuetext="No classes recorded">
+              <div class="progress-fill" id="attendance-progress-fill"></div>
+            </div>
+          </div>
+          <div class="stats" aria-label="Attendance counts">
+            <div class="stat"><span class="stat-label">Attended</span><span class="stat-value" id="stat-attended">0</span></div>
+            <div class="stat"><span class="stat-label">Conducted</span><span class="stat-value" id="stat-conducted">0</span></div>
+            <div class="stat"><span class="stat-label">Missed</span><span class="stat-value" id="stat-missed">0</span></div>
+          </div>
+          <div class="smart-metrics" aria-label="Smart attendance calculations">
+            <div class="smart-metric">
+              <span class="smart-label">Classes to reach target</span>
+              <strong id="classes-needed">—</strong>
+              <small id="needed-caption">Calculate to see your next step.</small>
+            </div>
+            <div class="smart-metric">
+              <span class="smart-label">Safe consecutive misses</span>
+              <strong id="safe-misses">—</strong>
+              <small id="misses-caption">Calculate to see your attendance cushion.</small>
+            </div>
+          </div>
+          <div class="plan-box">
+            <div class="plan-title"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v3m0 12v3M3 12h3m12 0h3M5.6 5.6l2.1 2.1m8.6 8.6 2.1 2.1m0-12.8-2.1 2.1m-8.6 8.6-2.1 2.1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"></circle></svg><span id="plan-heading">Your next step</span></div>
+            <p class="plan-text" id="plan-text">Your attendance plan will appear here.</p>
+          </div>
+          <p class="formula"><strong>The math:</strong> attendance = attended ÷ conducted × 100. Your target is <span id="target-display">75%</span>.</p>
+        </section>
+      </section>
+
+      <section class="subjects-section" aria-labelledby="subjects-heading">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Keep your semester in view</p>
+            <h2 id="subjects-heading">Your subjects</h2>
+            <p>Track each class and see your weighted overall rate.</p>
+          </div>
+          <div class="heading-actions">
+            <div class="overall-chip" id="overall-chip"><span>Overall</span><strong id="overall-rate">—</strong></div>
+            <button class="btn btn-primary add-subject" id="add-subject" type="button">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"></path></svg>
+              Add subject
+            </button>
+          </div>
+        </div>
+        <form class="panel subject-form" id="subject-form" novalidate="">
+          <h3 id="subject-form-heading">Add a subject</h3>
+          <div class="subject-fields">
+            <div class="field">
+              <label class="field-label" for="subject-name">Subject name</label>
+              <input class="input" id="subject-name" type="text" maxlength="80" placeholder="e.g. Modern History" required="">
+            </div>
+            <div class="field">
+              <label class="field-label" for="subject-total">Conducted</label>
+              <input class="input" id="subject-total" type="number" min="0" step="1" inputmode="numeric" placeholder="0" required="">
+            </div>
+            <div class="field">
+              <label class="field-label" for="subject-attended">Attended</label>
+              <input class="input" id="subject-attended" type="number" min="0" step="1" inputmode="numeric" placeholder="0" required="">
+            </div>
+            <div class="field">
+              <label class="field-label" for="subject-target">Required %</label>
+              <input class="input" id="subject-target" type="number" min="0" max="100" step="any" value="75" required="">
+            </div>
+          </div>
+          <p class="form-message" id="subject-message" aria-live="polite"></p>
+          <div class="subject-actions">
+            <button class="btn btn-quiet" id="cancel-subject" type="button">Cancel</button>
+            <button class="btn btn-primary" id="save-subject" type="submit">Add subject</button>
+          </div>
+        </form>
+        <div class="subjects-list" id="subjects-list" aria-live="polite"></div>
+      </section>
+      <footer class="footer-note"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3 5 6v5c0 4.7 2.9 8.2 7 10 4.1-1.8 7-5.3 7-10V6l-7-3Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"></path><path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg>Your subjects stay on this device. Take it one class at a time.</footer>
+    </main>
+  
+
+<div id="replit-pill-host"><template shadowmode="closed"><div id="replit-pill" data-state="cta"><div class="shimmer"></div><div class="badge-content"><svg width="9.33" height="14" viewBox="0 0 50 75" fill="none" class="replit-logo">
+        <path d="M25 19.995C25 20.0375 25 20.0575 25 20.085C25.015 21.34 25.5475 22.6275 26.425 23.525C26.445 23.545 26.4475 23.5475 26.45 23.55C26.485 23.585 26.5025 23.6025 26.54 23.6375C27.4225 24.485 28.6775 25.005 29.9025 25.03C29.9525 25.03 29.9975 25.03 30.0825 25.03H42C44.8 25.03 46.2 25.03 47.27 25.575C48.21 26.055 48.975 26.82 49.455 27.76C50 28.83 50 30.23 50 33.03V42.03C50 44.83 50 46.23 49.455 47.3C48.975 48.24 48.21 49.005 47.27 49.485C46.2 50.03 44.8 50.03 42 50.03H29.9275C28.6425 50.0325 27.3225 50.58 26.4125 51.485C26.4075 51.49 26.4775 51.42 26.45 51.4475C26.445 51.4525 26.4425 51.4525 26.4225 51.475C25.545 52.3725 25.0125 53.6575 24.9975 54.9125C24.9975 54.94 24.9975 54.9625 24.9975 55.0025V67.0575C24.9975 69.8575 24.9975 71.2575 24.4525 72.3275C23.9725 73.2675 23.2075 74.0325 22.2675 74.5125C21.1975 75.0575 19.7975 75.0575 16.9975 75.0575H7.9975C5.1975 75.0575 3.7975 75.0575 2.7275 74.5125C1.7875 74.0325 1.0225 73.2675 0.542498 72.3275C-0.00250244 71.2575 -0.00250244 69.8575 -0.00250244 67.0575V58.0575C-0.00250244 55.2575 -0.00250244 53.8575 0.542498 52.7875C1.0225 51.8475 1.7875 51.0825 2.7275 50.6025C3.7975 50.0575 5.1975 50.0575 7.9975 50.0575H19.7225C19.9 50.0575 19.9875 50.0575 20.08 50.055C21.2475 50.0125 22.4375 49.52 23.295 48.7225C23.3625 48.66 23.4125 48.61 23.5125 48.51C23.55 48.4725 23.5675 48.455 23.6025 48.42C24.455 47.5325 24.9725 46.2825 24.9975 45.0525C24.9975 45.0025 24.9975 44.96 24.9975 44.875V30.12C24.9975 30.0325 24.9975 29.99 24.9975 29.94C24.9725 28.71 24.455 27.46 23.6025 26.575C23.5675 26.54 23.55 26.52 23.5125 26.4825C23.475 26.445 23.4575 26.4275 23.42 26.3925C22.5325 25.54 21.2825 25.0225 20.0525 24.9975C20.0025 24.9975 19.96 24.9975 19.875 24.9975H7.9975C5.1975 24.9975 3.7975 24.9975 2.7275 24.4525C1.7875 23.9725 1.0225 23.2075 0.542498 22.2675C-0.00250244 21.1975 -0.00250244 19.7975 -0.00250244 16.9975V7.9975C-2.44146e-06 5.2 -2.44379e-06 3.8 0.544998 2.73C1.025 1.79 1.79 1.025 2.73 0.545C3.8 0 5.2 0 8 0H17C19.8 0 21.2 0 22.27 0.545C23.21 1.025 23.975 1.79 24.455 2.73C25 3.8 25 5.2 25 8V19.995Z" fill="currentColor"></path>
+      </svg><span class="flip ready" style="width: 69px;"><span class="row" data-key="brand" aria-hidden="true" style="">Made with Replit</span><span class="row in" data-key="cta" aria-hidden="false">Build for free</span></span></div><button class="close-button" aria-label="Close"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="close-icon" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 6 6 18"></path>
+        <path d="m6 6 12 12"></path>
+      </svg></button></div></template></div></body></html>
+------MultipartBoundary--EYh3WtQcCPO4gRSE66mGxZyYG5lrnI6W3rxMh7RFES----
+Content-Type: text/css
+Content-Transfer-Encoding: binary
+Content-Location: https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap
+
+@charset "utf-8";
+
+@font-face { font-family: "DM Sans"; font-style: normal; font-weight: 400; font-display: swap; src: url("https://fonts.gstatic.com/s/dmsans/v17/rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu6-K6h9Q.woff2") format("woff2"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+
+@font-face { font-family: "DM Sans"; font-style: normal; font-weight: 400; font-display: swap; src: url("https://fonts.gstatic.com/s/dmsans/v17/rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu0-K4.woff2") format("woff2"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
+@font-face { font-family: "DM Sans"; font-style: normal; font-weight: 500; font-display: swap; src: url("https://fonts.gstatic.com/s/dmsans/v17/rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu6-K6h9Q.woff2") format("woff2"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+
+@font-face { font-family: "DM Sans"; font-style: normal; font-weight: 500; font-display: swap; src: url("https://fonts.gstatic.com/s/dmsans/v17/rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu0-K4.woff2") format("woff2"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
+@font-face { font-family: "DM Sans"; font-style: normal; font-weight: 600; font-display: swap; src: url("https://fonts.gstatic.com/s/dmsans/v17/rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu6-K6h9Q.woff2") format("woff2"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+
+@font-face { font-family: "DM Sans"; font-style: normal; font-weight: 600; font-display: swap; src: url("https://fonts.gstatic.com/s/dmsans/v17/rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu0-K4.woff2") format("woff2"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
+@font-face { font-family: "DM Sans"; font-style: normal; font-weight: 700; font-display: swap; src: url("https://fonts.gstatic.com/s/dmsans/v17/rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu6-K6h9Q.woff2") format("woff2"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+
+@font-face { font-family: "DM Sans"; font-style: normal; font-weight: 700; font-display: swap; src: url("https://fonts.gstatic.com/s/dmsans/v17/rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu0-K4.woff2") format("woff2"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
+@font-face { font-family: Manrope; font-style: normal; font-weight: 400; font-display: swap; src: url("https://fonts.gstatic.com/s/manrope/v23/xn7gYHE41ni1AdIRggqxSuXd.woff2") format("woff2"); unicode-range: U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F; }
+
+@font-face { font-family: Manrope; font-style: normal; font-weight: 400; font-display: swap; src: url("https://fonts.gstatic.com/s/manrope/v23/xn7gYHE41ni1AdIRggOxSuXd.woff2") format("woff2"); unicode-range: U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116; }
+
+@font-face { font-family: Manrope; font-style: normal; font-weight: 400; font-display: swap; src: url("https://fonts.gstatic.com/s/manrope/v23/xn7gYHE41ni1AdIRggSxSuXd.woff2") format("woff2"); unicode-range: U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF; }
+
+@font-face { font-family: Manrope; font-style: normal; font-weight: 400; font-display: swap; src: url("https://fonts.gstatic.com/s/manrope/v23/xn7gYHE41ni1AdIRggixSuXd.woff2") format("woff2"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }
+
+@font-face { font-family: Manrope; font-style: normal; font-weight: 400; font-display: swap; src: url("https://fonts.gstatic.com/s/manrope/v23/xn7gYHE41ni1AdIRggmxSuXd.woff2") format("woff2"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+
+@font-face { font-family: Manrope; font-style: normal; font-weight: 400; font-display: swap; src: url("https://fonts.gstatic.com/s/manrope/v23/xn7gYHE41ni1AdIRggexSg.woff2") format("woff2"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
+@font-face { font-family: Manrope; font-style: normal; font-weight: 500; font-display: swap; src: url("https://fonts.gstatic.com/s/manrope/v23/xn7gYHE41ni1AdIRggqxSuXd.woff2") format("woff2"); unicode-range: U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F; }
+
+@font-face { font-family: Manrope; font-style: normal; font-weight: 500; font-display: swap; src: url("https://fonts.gstatic.com/s/manrope/v23/xn7gYHE41ni1AdIRggOxSuXd.woff2") format("woff2"); unicode-range: U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116; }
+
+@font-face { font-family: Manrope; font-style: normal; font-weight: 500; font-display: swap; src: url("https://fonts.gstatic.com/s/manrope/v23/xn7gYHE41ni1AdIRggSxSuXd.woff2") format("woff2"); unicode-range: U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF; }
+
+@font-face { font-family: Manrope; font-style: normal; font-weight: 500; font-display: swap; src: url("https://fonts.gstatic.com/s/manrope/v23/xn7gYHE41ni1AdIRggixSuXd.woff2") format("woff2"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }
+
+@font-face { font-family: Manrope; font-style: normal; font-weight: 500; font-display: swap; src: url("https://fonts.gstatic.com/s/manrope/v23/xn7gYHE41ni1AdIRggmxSuXd.woff2") format("woff2"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+
+@font-face { font-family: Manrope; font-style: normal; font-weight: 500; font-display: swap; src: url("https://fonts.gstatic.com/s/manrope/v23/xn7gYHE41ni1AdIRggexSg.woff2") format("woff2"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
+@font-face { font-family: Manrope; font-style: normal; font-weight: 600; font-display: swap; src: url("https://fonts.gstatic.com/s/manrope/v23/xn7gYHE41ni1AdIRggqxSuXd.woff2") format("woff2"); unicode-range: U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F; }
+
+@font-face { font-family: Manrope; font-style: normal; font-weight: 600; font-display: swap; src: url("https://fonts.gstatic.com/s/manrope/v23/xn7gYHE41ni1AdIRggOxSuXd.woff2") format("woff2"); unicode-range: U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116; }
+
+@font-face { font-family: Manrope; font-style: normal; font-weight: 600; font-display: swap; src: url("https://fonts.gstatic.com/s/manrope/v23/xn7gYHE41ni1AdIRggSxSuXd.woff2") format("woff2"); unicode-range: U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF; }
+
+@font-face { font-family: Manrope; font-style: normal; font-weight: 600; font-display: swap; src: url("https://fonts.gstatic.com/s/manrope/v23/xn7gYHE41ni1AdIRggixSuXd.woff2") format("woff2"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }
+
+@font-face { font-family: Manrope; font-style: normal; font-weight: 600; font-display: swap; src: url("https://fonts.gstatic.com/s/manrope/v23/xn7gYHE41ni1AdIRggmxSuXd.woff2") format("woff2"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+
+@font-face { font-family: Manrope; font-style: normal; font-weight: 600; font-display: swap; src: url("https://fonts.gstatic.com/s/manrope/v23/xn7gYHE41ni1AdIRggexSg.woff2") format("woff2"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
+@font-face { font-family: Manrope; font-style: normal; font-weight: 700; font-display: swap; src: url("https://fonts.gstatic.com/s/manrope/v23/xn7gYHE41ni1AdIRggqxSuXd.woff2") format("woff2"); unicode-range: U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F; }
+
+@font-face { font-family: Manrope; font-style: normal; font-weight: 700; font-display: swap; src: url("https://fonts.gstatic.com/s/manrope/v23/xn7gYHE41ni1AdIRggOxSuXd.woff2") format("woff2"); unicode-range: U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116; }
+
+@font-face { font-family: Manrope; font-style: normal; font-weight: 700; font-display: swap; src: url("https://fonts.gstatic.com/s/manrope/v23/xn7gYHE41ni1AdIRggSxSuXd.woff2") format("woff2"); unicode-range: U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF; }
+
+@font-face { font-family: Manrope; font-style: normal; font-weight: 700; font-display: swap; src: url("https://fonts.gstatic.com/s/manrope/v23/xn7gYHE41ni1AdIRggixSuXd.woff2") format("woff2"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }
+
+@font-face { font-family: Manrope; font-style: normal; font-weight: 700; font-display: swap; src: url("https://fonts.gstatic.com/s/manrope/v23/xn7gYHE41ni1AdIRggmxSuXd.woff2") format("woff2"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+
+@font-face { font-family: Manrope; font-style: normal; font-weight: 700; font-display: swap; src: url("https://fonts.gstatic.com/s/manrope/v23/xn7gYHE41ni1AdIRggexSg.woff2") format("woff2"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
+@font-face { font-family: Manrope; font-style: normal; font-weight: 800; font-display: swap; src: url("https://fonts.gstatic.com/s/manrope/v23/xn7gYHE41ni1AdIRggqxSuXd.woff2") format("woff2"); unicode-range: U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F; }
+
+@font-face { font-family: Manrope; font-style: normal; font-weight: 800; font-display: swap; src: url("https://fonts.gstatic.com/s/manrope/v23/xn7gYHE41ni1AdIRggOxSuXd.woff2") format("woff2"); unicode-range: U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116; }
+
+@font-face { font-family: Manrope; font-style: normal; font-weight: 800; font-display: swap; src: url("https://fonts.gstatic.com/s/manrope/v23/xn7gYHE41ni1AdIRggSxSuXd.woff2") format("woff2"); unicode-range: U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF; }
+
+@font-face { font-family: Manrope; font-style: normal; font-weight: 800; font-display: swap; src: url("https://fonts.gstatic.com/s/manrope/v23/xn7gYHE41ni1AdIRggixSuXd.woff2") format("woff2"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }
+
+@font-face { font-family: Manrope; font-style: normal; font-weight: 800; font-display: swap; src: url("https://fonts.gstatic.com/s/manrope/v23/xn7gYHE41ni1AdIRggmxSuXd.woff2") format("woff2"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+
+@font-face { font-family: Manrope; font-style: normal; font-weight: 800; font-display: swap; src: url("https://fonts.gstatic.com/s/manrope/v23/xn7gYHE41ni1AdIRggexSg.woff2") format("woff2"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+------MultipartBoundary--EYh3WtQcCPO4gRSE66mGxZyYG5lrnI6W3rxMh7RFES----
+Content-Type: text/css
+Content-Transfer-Encoding: binary
+Content-Location: https://attend-ease-dashboard--kallurinarayana.replit.app/attendance-calculator/assets/index-DsI8CjNu.css
+
+@charset "utf-8";
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap");
+
+:root { color-scheme: light; --ink: #24334f; --muted: #74819a; --blue: #5379d7; --blue-deep: #3e61bd; --blue-soft: #eaf0ff; --lavender: #f1edff; --lavender-ink: #7867bd; --mint: #e4f4ed; --mint-ink: #34785d; --rose: #fff0ed; --rose-ink: #b75c55; --paper: #f5f7fc; --surface: #fff; --line: #e8ecf4; --shadow: 0 14px 38px rgba(47, 66, 108, .075); font-family: "DM Sans", sans-serif; color: var(--ink); background: var(--paper); font-synthesis: none; }
+
+* { box-sizing: border-box; }
+
+body { margin: 0px; min-width: 320px; min-height: 100vh; background: radial-gradient(ellipse at 84% 0%,#eeedff 0,transparent 29rem),var(--paper); }
+
+button, input { font: inherit; }
+
+button { cursor: pointer; }
+
+button:focus-visible, input:focus-visible { outline: rgba(83, 121, 215, 0.3) solid 3px; outline-offset: 2px; }
+
+.app-shell { width: min(1160px, 100% - 48px); margin: 0px auto; padding: 27px 0px 60px; }
+
+.topbar { display: flex; justify-content: space-between; align-items: center; gap: 20px; margin-bottom: 35px; }
+
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: inherit; }
+
+.brand-mark { display: grid; place-items: center; width: 44px; height: 44px; color: rgb(255, 255, 255); background: var(--blue); border-radius: 15px; box-shadow: rgba(83, 121, 215, 0.2) 0px 7px 15px; }
+
+.brand-mark svg { width: 25px; height: 25px; }
+
+.brand-name { font: 800 15px / 1.15 Manrope, sans-serif; letter-spacing: -0.035em; }
+
+.brand-sub { display: block; margin-top: 4px; color: var(--muted); font-size: 11px; font-weight: 500; letter-spacing: 0.035em; }
+
+.date-chip { color: rgb(101, 114, 140); background: rgba(255, 255, 255, 0.78); padding: 10px 14px; border: 1px solid var(--line); border-radius: 999px; font-size: 12px; }
+
+.intro { display: flex; align-items: flex-end; justify-content: space-between; gap: 30px; margin-bottom: 27px; }
+
+.eyebrow { color: var(--blue); text-transform: uppercase; font-size: 10px; font-weight: 700; letter-spacing: 0.15em; margin: 0px 0px 10px; }
+
+h1, h2, h3, p { margin-top: 0px; }
+
+h1 { margin-bottom: 8px; font: 800 clamp(28px, 4vw, 40px) / 1.12 Manrope, sans-serif; letter-spacing: -0.055em; }
+
+.intro-copy { margin: 0px; color: var(--muted); font-size: 14px; }
+
+.student-field { width: min(235px, 32%); flex-shrink: 0; }
+
+.field-label { display: block; color: rgb(89, 103, 128); font-size: 11px; font-weight: 700; margin-bottom: 7px; }
+
+.input { width: 100%; height: 44px; color: var(--ink); background: rgb(255, 255, 255); border: 1px solid var(--line); border-radius: 12px; padding: 0px 13px; transition: border-color 0.18s, box-shadow 0.18s; }
+
+.input::placeholder { color: rgb(160, 170, 190); }
+
+.input:focus { border-color: rgb(147, 169, 232); box-shadow: rgba(83, 121, 215, 0.09) 0px 0px 0px 3px; outline: none; }
+
+.dashboard-grid { display: grid; grid-template-columns: minmax(0px, 1.18fr) minmax(340px, 0.82fr); gap: 20px; align-items: stretch; }
+
+.panel { background: rgba(255, 255, 255, 0.95); border: 1px solid rgba(227, 232, 243, 0.9); border-radius: 22px; box-shadow: var(--shadow); }
+
+.calculator { padding: 25px; }
+
+.panel-heading { display: flex; justify-content: space-between; align-items: flex-start; gap: 15px; margin-bottom: 21px; }
+
+.panel-heading h2 { margin: 0px 0px 5px; font: 800 19px / 1.2 Manrope, sans-serif; letter-spacing: -0.035em; }
+
+.panel-heading p { margin: 0px; color: var(--muted); font-size: 12px; }
+
+.tiny-cap { display: grid; place-items: center; width: 38px; height: 38px; color: var(--lavender-ink); background: var(--lavender); border-radius: 13px; }
+
+.tiny-cap svg { width: 21px; height: 21px; }
+
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 14px; }
+
+.field.full { grid-column: 1 / -1; }
+
+.suffix-wrap { position: relative; }
+
+.suffix-wrap .input { padding-right: 43px; }
+
+.suffix { position: absolute; right: 13px; top: 50%; transform: translateY(-50%); color: rgb(139, 150, 170); font-size: 12px; pointer-events: none; }
+
+.button-row { display: flex; gap: 10px; margin-top: 20px; }
+
+.btn { display: inline-flex; justify-content: center; align-items: center; min-height: 42px; gap: 8px; border: 0px; border-radius: 12px; padding: 0px 17px; font-size: 12px; font-weight: 700; transition: transform 0.18s, background 0.18s, box-shadow 0.18s; }
+
+.btn:hover { transform: translateY(-1px); }
+
+.btn:active { transform: translateY(0px); }
+
+.btn-primary { color: rgb(255, 255, 255); background: var(--blue); box-shadow: rgba(83, 121, 215, 0.18) 0px 6px 13px; }
+
+.btn-primary:hover { background: var(--blue-deep); }
+
+.btn-quiet { color: rgb(105, 118, 144); background: rgb(242, 244, 249); }
+
+.btn-quiet:hover { background: rgb(233, 237, 245); }
+
+.btn svg { width: 15px; height: 15px; }
+
+.form-message { min-height: 18px; margin: 12px 0px 0px; color: var(--rose-ink); font-size: 11px; }
+
+.results { padding: 25px; position: relative; overflow: hidden; background: linear-gradient(145deg, rgb(255, 255, 255) 15%, rgb(245, 243, 255)); }
+
+.results::after { content: ""; width: 190px; height: 190px; position: absolute; right: -92px; top: -105px; border: 1px solid rgba(120, 103, 189, 0.1); border-radius: 50%; box-shadow: rgba(120, 103, 189, 0.024) 0px 0px 0px 20px, rgba(120, 103, 189, 0.02) 0px 0px 0px 42px; pointer-events: none; }
+
+.result-top { position: relative; z-index: 1; display: flex; justify-content: space-between; align-items: flex-start; gap: 14px; }
+
+.result-top h2 { margin: 0px; font: 800 18px Manrope, sans-serif; letter-spacing: -0.03em; }
+
+.status-pill { display: inline-flex; align-items: center; gap: 6px; border-radius: 99px; padding: 7px 10px; color: var(--muted); background: rgb(240, 242, 247); font-size: 10px; font-weight: 700; white-space: nowrap; }
+
+.status-pill::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: rgb(155, 165, 183); }
+
+.status-pill.good { color: var(--mint-ink); background: var(--mint); }
+
+.status-pill.good::before { background: rgb(86, 167, 125); }
+
+.status-pill.warn { color: var(--rose-ink); background: var(--rose); }
+
+.status-pill.warn::before { background: rgb(213, 123, 112); }
+
+.rate-wrap { display: flex; align-items: center; gap: 17px; margin: 24px 0px 18px; }
+
+.rate-ring { --rate: 0%; position: relative; width: 102px; height: 102px; flex: 0 0 102px; display: grid; place-items: center; border-radius: 50%; background: conic-gradient(var(--blue) var(--rate),#e8eafa 0); }
+
+.rate-ring::before { content: ""; position: absolute; inset: 7px; border-radius: 50%; background: rgb(251, 250, 255); }
+
+.rate-ring > span { z-index: 1; font: 800 23px Manrope, sans-serif; letter-spacing: -0.06em; }
+
+.rate-copy strong { display: block; margin-bottom: 5px; font: 800 15px Manrope, sans-serif; }
+
+.rate-copy p { margin: 0px; max-width: 195px; color: var(--muted); font-size: 11px; line-height: 1.5; }
+
+.main-progress { margin: 16px 0px; }
+
+.progress-label { display: flex; justify-content: space-between; gap: 10px; margin-bottom: 7px; color: rgb(120, 132, 155); font-size: 10px; font-weight: 600; }
+
+.progress-label span:last-child { color: var(--ink); font-weight: 800; }
+
+.progress-track { height: 8px; overflow: hidden; border-radius: 99px; background: rgb(232, 234, 250); }
+
+.progress-fill { width: 0px; height: 100%; border-radius: inherit; background: var(--blue); transition: width 0.35s, background 0.2s; }
+
+.results[data-status="good"] .progress-fill { background: rgb(86, 167, 125); }
+
+.results[data-status="warn"] .progress-fill { background: rgb(213, 123, 112); }
+
+.results[data-status="good"] .rate-ring { background: conic-gradient(#56a77d var(--rate),#e8f4ed 0); }
+
+.results[data-status="warn"] .rate-ring { background: conic-gradient(#d57b70 var(--rate),#fae8e5 0); }
+
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+
+.stat { border-radius: 13px; padding: 11px 10px; background: rgba(255, 255, 255, 0.8); border: 1px solid rgb(236, 236, 245); }
+
+.stat-label { display: block; color: var(--muted); font-size: 10px; margin-bottom: 4px; }
+
+.stat-value { font: 800 17px Manrope, sans-serif; }
+
+.smart-metrics { display: grid; grid-template-columns: repeat(2, minmax(0px, 1fr)); gap: 8px; margin-top: 12px; }
+
+.smart-metric { min-width: 0px; padding: 11px; border: 1px solid rgb(236, 236, 245); border-radius: 13px; background: rgba(255, 255, 255, 0.8); }
+
+.smart-label { display: block; min-height: 28px; color: var(--muted); font-size: 10px; line-height: 1.4; }
+
+.smart-metric strong { display: block; margin: 4px 0px; color: var(--ink); font: 800 17px / 1.2 Manrope, sans-serif; overflow-wrap: anywhere; }
+
+.smart-metric small { display: block; color: rgb(132, 144, 165); font-size: 9px; line-height: 1.45; }
+
+.plan-box { margin-top: 14px; background: rgb(237, 242, 255); border-radius: 14px; padding: 14px 15px; color: rgb(63, 88, 151); }
+
+.plan-title { display: flex; align-items: center; gap: 7px; margin-bottom: 5px; font-size: 11px; font-weight: 800; }
+
+.plan-title svg { width: 15px; height: 15px; }
+
+.plan-text { margin: 0px; font-size: 11px; line-height: 1.55; color: rgb(88, 109, 159); }
+
+.formula { margin: 16px 0px 0px; color: rgb(137, 147, 167); font-size: 10px; line-height: 1.5; }
+
+.formula strong { color: rgb(102, 115, 140); }
+
+.subjects-section { margin-top: 36px; }
+
+.section-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; margin-bottom: 15px; }
+
+.heading-actions { display: flex; align-items: center; gap: 9px; }
+
+.add-subject { min-height: 38px; padding: 0px 13px; }
+
+.section-heading h2 { margin: 0px 0px 5px; font: 800 21px Manrope, sans-serif; letter-spacing: -0.04em; }
+
+.section-heading p { margin: 0px; font-size: 12px; color: var(--muted); }
+
+.overall-chip { display: flex; align-items: center; gap: 8px; color: rgb(102, 115, 141); border: 1px solid var(--line); background: rgb(255, 255, 255); border-radius: 99px; padding: 9px 13px; font-size: 11px; }
+
+.overall-chip strong { color: var(--blue-deep); font: 800 13px Manrope, sans-serif; }
+
+.subject-form { display: none; margin-bottom: 15px; padding: 19px; }
+
+.subject-form.open { display: block; animation: 0.2s ease-out 0s 1 normal none running rise; }
+
+.subject-form h3 { font: 800 15px Manrope, sans-serif; margin-bottom: 16px; }
+
+.subject-fields { display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr; gap: 12px; align-items: end; }
+
+.subject-actions { display: flex; gap: 8px; margin-top: 15px; justify-content: flex-end; }
+
+.subjects-list { display: grid; gap: 11px; }
+
+.subject-card { display: grid; grid-template-columns: minmax(180px, 1.2fr) minmax(100px, 0.7fr) minmax(150px, 1fr) auto; gap: 15px; align-items: center; padding: 17px 19px; transition: transform 0.18s, box-shadow 0.18s; }
+
+.subject-card:hover { transform: translateY(-2px); box-shadow: rgba(47, 66, 108, 0.09) 0px 14px 30px; }
+
+.subject-name { font: 800 13px Manrope, sans-serif; margin-bottom: 4px; }
+
+.subject-meta { color: var(--muted); font-size: 10px; }
+
+.subject-percent { font: 800 20px Manrope, sans-serif; letter-spacing: -0.04em; }
+
+.subject-percent small { display: block; margin-top: 3px; color: var(--muted); font: 500 10px "DM Sans", sans-serif; letter-spacing: 0px; }
+
+.mini-track { height: 7px; overflow: hidden; border-radius: 99px; background: rgb(237, 240, 247); margin-bottom: 6px; }
+
+.mini-fill { height: 100%; width: var(--width); background: var(--blue); border-radius: inherit; transition: width 0.3s; }
+
+.subject-progress small { color: var(--muted); font-size: 10px; }
+
+.subject-tools { display: flex; align-items: center; gap: 7px; }
+
+.icon-btn { display: grid; place-items: center; width: 34px; height: 34px; border: 1px solid var(--line); color: rgb(123, 135, 156); background: rgb(255, 255, 255); border-radius: 10px; transition: background 0.18s, color 0.18s; }
+
+.icon-btn:hover { color: var(--blue-deep); background: var(--blue-soft); }
+
+.icon-btn.delete:hover { color: var(--rose-ink); background: var(--rose); }
+
+.icon-btn svg { width: 15px; height: 15px; }
+
+.empty-state { padding: 35px 20px; text-align: center; border: 1px dashed rgb(212, 220, 238); background: rgba(255, 255, 255, 0.62); border-radius: 20px; }
+
+.empty-illustration { width: 52px; height: 52px; margin: 0px auto 13px; display: grid; place-items: center; border-radius: 17px; color: var(--lavender-ink); background: var(--lavender); }
+
+.empty-illustration svg { width: 26px; height: 26px; }
+
+.empty-state h3 { margin: 0px 0px 6px; font: 800 15px Manrope, sans-serif; }
+
+.empty-state p { margin: 0px auto 16px; max-width: 350px; color: var(--muted); font-size: 12px; line-height: 1.55; }
+
+.footer-note { display: flex; justify-content: center; gap: 7px; margin-top: 30px; color: rgb(154, 164, 182); font-size: 10px; text-align: center; }
+
+.footer-note svg { width: 13px; height: 13px; }
+
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px; }
+
+@keyframes rise { 
+  0% { opacity: 0; transform: translateY(5px); }
+  100% { opacity: 1; transform: translateY(0px); }
+}
+
+@media (max-width: 820px) {
+  .dashboard-grid { grid-template-columns: 1fr; }
+  .subject-fields { grid-template-columns: 1fr 1fr; }
+  .subject-card { grid-template-columns: 1.1fr 0.6fr 1fr auto; gap: 10px; padding: 15px; }
+}
+
+@media (max-width: 560px) {
+  .app-shell { width: min(100% - 30px, 500px); padding-top: 18px; }
+  .topbar { margin-bottom: 27px; }
+  .date-chip { display: none; }
+  .intro { display: block; margin-bottom: 21px; }
+  .student-field { width: 100%; margin-top: 17px; }
+  h1 { font-size: 31px; }
+  .calculator, .results { padding: 19px; border-radius: 19px; }
+  .form-grid { gap: 13px 10px; }
+  .field-label { font-size: 10px; }
+  .input { height: 42px; padding-left: 11px; }
+  .button-row .btn { flex: 1 1 0%; }
+  .rate-wrap { gap: 13px; }
+  .rate-ring { width: 88px; height: 88px; flex-basis: 88px; }
+  .rate-ring > span { font-size: 20px; }
+  .stat { padding: 9px 8px; }
+  .stat-value { font-size: 15px; }
+  .section-heading { align-items: flex-start; flex-direction: column; }
+  .heading-actions { width: 100%; justify-content: space-between; }
+  .subject-fields { grid-template-columns: 1fr 1fr; }
+  .subject-fields .field:first-child { grid-column: 1 / -1; }
+  .subject-card { grid-template-columns: 1fr auto; }
+  .subject-percent { grid-area: 2 / 1; }
+  .subject-progress { grid-area: 3 / 1 / auto / -1; }
+  .subject-tools { grid-area: 1 / 2 / span 2; align-self: center; }
+  .overall-chip { padding: 8px 11px; }
+}
+
+@media (max-width: 370px) {
+  .smart-metrics { grid-template-columns: 1fr; }
+  .smart-label { min-height: 0px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after { scroll-behavior: auto !important; animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+------MultipartBoundary--EYh3WtQcCPO4gRSE66mGxZyYG5lrnI6W3rxMh7RFES------
